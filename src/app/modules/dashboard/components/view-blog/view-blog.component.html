@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<div class="container">
+  <div *ngIf="displayblog">
+    <mat-card class="example-card">
+      <mat-card-header class="header-container">
+        <mat-card-title>Title:{{ displayblog[0].title }}</mat-card-title>
+        <mat-card-subtitle>Author:{{ displayblog[0].author }}</mat-card-subtitle>
+        <mat-card-subtitle>Created Date:{{ displayblog[0].createdate | date : "EEE MMM dd yyyy HH:mm:ss" }}</mat-card-subtitle>
+        <mat-card-actions align="start">
+          <button mat-button color="primary" class="backbutton" type="submit" (click)="back()" >
+            Back
+            <mat-icon>arrow_back</mat-icon>
+          </button>
+        </mat-card-actions>
+         
+      
+      </mat-card-header>
+      <mat-card-content>
+        <p *ngFor="let par of displayblog[0].content">{{ par.paragraph }}</p>
+      </mat-card-content>
+     
+    </mat-card>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.container{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height:75vh;
+}
+.example-card {
+    width: 800px;
+    
+  }
+  mat-card-title{
+    font-size:28px;
+  }
+  mat-card-header{
+    background-color: gainsboro;
+    padding-bottom:20px;
+  }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .back-button-container {
+    margin-left: auto;
+  }
+  mat-card-subtitle{
+    font-size: 18px;
+    padding-bottom:10px;
+  }
+  mat-card-content{
+    font-size: 16px;
+    text-align:justify;
+  }
+  @media only screen and (max-width: 600px) {
+  body {
+    background-color: lightblue;
+  }
+}

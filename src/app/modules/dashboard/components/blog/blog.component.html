@@ -1,0 +1,71 @@
+<app-header></app-header>
+<mat-slide-toggle (change)="showTable()"color="warn" class="toggle">Table view</mat-slide-toggle>
+<mat-form-field appearance="outline" class="select">
+  <mat-label>Filter</mat-label>
+  <mat-select
+    [(ngModel)]="selectedBlog"
+    class="custom-select"
+    (ngModelChange)="getBlog()"
+  >
+    <mat-option value="personal">Your Blogs</mat-option>
+    <mat-option value="all">All Blogs</mat-option>
+  </mat-select>
+</mat-form-field>
+<div *ngIf="loggedInUserPost" class="card">
+  <div *ngFor="let post of loggedInUserPost">
+    <!-- <div *ngIf="displayTable">
+    <mat-table>
+      <ng-container >
+        <mat-header-cell></mat-header-cell>
+        <mat-cell></mat-cell>
+      </ng-container>
+      <ng-container>
+        <mat-header-cell></mat-header-cell>
+        <mat-cell></mat-cell>
+      </ng-container>
+      <ng-container>
+        <mat-header-cell></mat-header-cell>
+        <mat-cell></mat-cell>
+      </ng-container>
+    </mat-table>
+    </div> -->
+    <div>
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.title }}</mat-card-title>
+        <mat-card-actions>
+          <button mat-button (click)="deleteBlog(post.id)"[disabled]="post.author!==user">
+            <mat-icon>delete</mat-icon>
+          </button>
+
+          <button mat-button type="submit" (click)="editBlog(post.id)"[disabled]="post.author!==user">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-button type="submit" (click)="viewBlog(post.id)">
+            <mat-icon>visibility</mat-icon>
+          </button>
+        </mat-card-actions>
+        <mat-card-subtitle>Author:{{ post.author }}</mat-card-subtitle>
+        <mat-card-subtitle
+          >Posted on:{{
+            post.createdate | date : "EEE MMM dd yyyy HH:mm:ss"
+          }}</mat-card-subtitle
+        >
+      </mat-card-header>
+
+      <mat-card-content>
+        <!-- <p *ngFor="let paragraph of post.content, let i=index; let first = first; let last = last" [ngClass]="first ? 'red' : ''">
+    {{paragraph.paragraph}}
+  </p>  -->
+        <p>
+          {{ post.content[0].paragraph | slice : 0 : 20
+          }}{{ post.content[0].paragraph.length > 20 ? "..." : "" }}
+        </p>
+      </mat-card-content>
+      <mat-card-footer>
+        <button mat-button (click)="viewBlog(post.id)">Read more...</button>
+      </mat-card-footer>
+    </mat-card>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="details">
+<mat-toolbar color="primary"class="fixed-header">
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My Blog</span>&nbsp;&nbsp;
+  <button mat-flat-button class="example-add" aria-label="Example icon-button with heart icon" type="submit" (click)="addBlog()" >
+    <mat-icon>add</mat-icon>
+    Add Blog
+   </button>
+  <span class="example-spacer"></span>
+  <span *ngIf="loggedInUsername ">Welcome {{ loggedInUsername }}</span>
+  
+<!-- <mat-form-field appearance="outline" class="select">
+  <mat-label>Filter</mat-label>
+  <mat-select [(ngModel)]="selectedBlog" class="custom-select">
+    <mat-option value="personel">Your Blogs</mat-option>
+    <mat-option value="all">All Blogs</mat-option>
+  </mat-select>
+</mat-form-field> -->
+  <button mat-icon-button class="example-icon setting-icon" aria-label="Example icon-button with add icon">
+    <mat-icon>settings</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon" type="submit"(click)="logout()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+</div>

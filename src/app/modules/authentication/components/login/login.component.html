@@ -1,0 +1,65 @@
+<div class="container">
+  <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+    <mat-card class="example-card">
+      <mat-card-header>
+        <mat-card-title>Login</mat-card-title>
+        <mat-card-subtitle>Please Enter Login Details</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your username</mat-label>
+            <input
+              matInput
+              name="username"
+              ngModel
+              required
+              #username="ngModel"
+            />
+            <mat-error [hidden]="username.valid">Username required</mat-error>
+            <!-- <span [hidden]="username.valid">Username required</span> -->
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-form-field appearance="outline">
+            <mat-label>Enter your password</mat-label>
+            <input
+              matInput
+              [type]="hide ? 'password' : 'text'"
+              name="password"
+              ngModel
+              required
+              #password="ngModel"
+            />
+            <button
+              mat-icon-button
+              matSuffix
+              (click)="hide = !hide"
+              [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hide"
+            >
+              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            </button>
+            <mat-error [hidden]="password.valid">Password required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="example-container">
+          <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">
+              Login
+            </button>
+            &nbsp;
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              (click)="signup()"
+            >
+              Signup
+            </button>
+          </mat-card-actions>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </form>
+</div>
