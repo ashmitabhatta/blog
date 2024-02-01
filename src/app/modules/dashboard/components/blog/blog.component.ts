@@ -47,13 +47,8 @@ editBlog(postId: number){
   this.service.getPostById(postId).subscribe((post)=>{
     this.checkAuthor=post.author;
     if (this.checkAuthor === this.user) {
-      // console.log(this.disabledButton);
-      // this.disabledButton=false;
       this.route.navigate(['blog/edit-blog', postId]);
-    } else {
-      // this.disabledButton=true;
-      alert("You are not authorized to edit this post.");
-    }
+    } 
   });
 }
 deleteBlog(postId: number): void {
@@ -65,8 +60,6 @@ deleteBlog(postId: number): void {
         alert('Post deleted successfully');
         this.getBlog();
       });
-    } else {
-      alert("You are not authorized to delete this post.");
     }
   }
   )
