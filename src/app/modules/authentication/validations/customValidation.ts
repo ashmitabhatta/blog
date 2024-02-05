@@ -1,11 +1,8 @@
 import {
   AbstractControl,
   ValidationErrors,
-  Validator,
-  ValidatorFn,
+  ValidatorFn
 } from '@angular/forms';
-import { SignupService } from '../service/signup.service';
-import { catchError, map } from 'rxjs';
 export function customemailValidation(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const email: string = control.value;

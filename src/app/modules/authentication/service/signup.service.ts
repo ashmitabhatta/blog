@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, map } from 'rxjs';
-import { Postdetails } from '../../dashboard/model/post.interface';
+import { Postdetails, Setting } from '../../dashboard/model/post.interface';
 import { Posts, Userlist } from '../model/user.interface';
 @Injectable({
   providedIn: 'root',
@@ -9,12 +9,20 @@ import { Posts, Userlist } from '../model/user.interface';
 export class SignupService {
   private url = `http://localhost:3000`;
   private loggedInUserSubject: BehaviorSubject<string | null> =
-    new BehaviorSubject<string | null>(null);
+  new BehaviorSubject<string | null>(null);
+  private loggedInUserIdSubject: BehaviorSubject<number | null> =
+  new BehaviorSubject<number | null>(null);
+  private settingSubject=new BehaviorSubject<Setting|null>(null);
+  setting$=this.settingSubject.asObservable();
   constructor(private http: HttpClient) {
     const storedUsername = localStorage.getItem('loggedInUser');
-    if (storedUsername) {
+    const storedSetting=localStorage.getItem('setting')
+    console.log(storedSetting);
+    if (storedUsername && storedSetting) {
       this.loggedInUserSubject.next(storedUsername);
+      this.settingSubject.next(JSON.parse(storedSetting));
     }
+    
   }
   addUsers(users: Userlist): Observable<Userlist> {
     console.log(users);
@@ -29,20 +37,36 @@ export class SignupService {
       })
     );
   }
-  checkUser(username: String, password: String): Observable<boolean> {
+  checkUser(username: string, password: string): Observable<boolean> {
     const url = `${this.url}/signup`;
     return this.http.get<Userlist[]>(url).pipe(
       map((users) => {
         const user = users.find(
           (u) => u.username === username && u.password === password
         );
+        if (user?.id) {
+          this.loggedInUserId = user.id.toString();
+          localStorage.setItem('userId', this.loggedInUserId);
+           
+        }
         return !!user; //boolean convertion
       })
     );
   }
+  getLoggedInUserId(): string | null {
+    console.log(this.loggedInUserId);
+    return this.loggedInUserId;
+  }
   setLoggedInUser(username: string): void {
     this.loggedInUserSubject.next(username);
-    localStorage.setItem('loggedInUser', username); //local storage value set
+    localStorage.setItem('loggedInUser', username); 
+    
+  //local storage value set
+  }
+  setLoggedInUserId(id: string): void {
+    this.loggedInUserSubject.next(id);
+  //   localStorage.setItem('Id', id); 
+  // //local storage value set
   }
   getLoggedInUser(): Observable<string | null> {
     return this.loggedInUserSubject.asObservable();
@@ -81,5 +105,22 @@ export class SignupService {
     const updateUrl = `${this.url}/post/${postId}`;
     return this.http.put<Postdetails>(updateUrl, updatedBlog);
   }
- 
+  getSetting(userId: string): Observable<Setting> {
+    console.log(userId);
+    return this.http.get<Setting>(`${this.url}/setting/${userId}`)
+  }
+  loggedInUserId=localStorage.getItem('userId');
+  settingUpdate(setting:Setting){
+    localStorage.setItem('setting',JSON.stringify(setting))
+    this.settingSubject.next(setting);
+  }
+  addSetting(settingPayload:Setting):Observable<any>
+  {
+    const settingurl = `${this.url}/setting`;
+    return this.http.post(settingurl,settingPayload);
+  }
+  updateSetting(settingId: string, setting: Setting): Observable<Setting> {
+    const settingurl = `${this.url}/setting/${settingId}`;
+    return this.http.put<Setting>(settingurl, setting);
+  }
 }

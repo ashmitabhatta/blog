@@ -1,93 +1,38 @@
 {
   "signup": [
     {
-      "id": "e040",
+      "id": "074b",
       "username": "ashmita",
       "password": "ashmita",
       "confirmpassword": "ashmita",
       "email": "ashmita@gmail.com"
     },
     {
-      "id": "e040",
+      "id": "b4fa",
       "username": "ashmita123",
       "password": "ashmita123",
       "confirmpassword": "ashmita123",
       "email": "ashmita123@gmail.com"
-    },
-    {
-      "id": "0d21",
-      "username": "sddsfffffffff",
-      "password": "1234567890",
-      "confirmpassword": "1234567890",
-      "email": "ass@gmail.com"
-    },
-    {
-      "id": "c644",
-      "username": "asdsdd",
-      "password": "asdfghjk",
-      "confirmpassword": "asdfghjk",
-      "email": "as@gmail.com"
-    },
-    {
-      "id": "791d",
-      "username": "dfgdfdf",
-      "password": "asdfghjkl",
-      "confirmpassword": "asdfghjkl",
-      "email": "fda@gmail.com"
-    },
-    {
-      "id": "7851",
-      "username": "oshin123",
-      "password": "oshin123",
-      "confirmpassword": "oshin123",
-      "email": "oshin@gmail.com"
-    },
-    {
-      "id": "a8e0",
-      "username": "ashmita111",
-      "password": "ashmita111",
-      "confirmpassword": "ashmita111",
-      "email": "ashmita111@gmail.com"
     }
   ],
   "post": [
     {
-      "title": "sdsdffds",
+      "id": "c4af",
+      "title": "U.S.-Nepal Relations",
       "author": "ashmita",
-      "createdate": "2024-02-01T03:16:44.291Z",
+      "createdate": "2024-02-04T12:20:32.382Z",
       "content": [
         {
-          "paragraph": "Hello",
+          "paragraph": "The United States recognized Nepal in 1947, and the two countries established diplomatic relations in 1948. Bilateral relations are friendly, and U.S. policy objectives center on helping Nepal build a peaceful, prosperous, resilient, and democratic society. Primary U.S. objectives in Nepal include: strengthening good governance, democratic values, and security and stability; supporting inclusive, equitable economic growth and a clean, resilient",
           "id": 1
-        },
-        {
-          "paragraph": "Welcome to my Blog",
-          "id": 2
-        }
-      ],
-      "id": "1250"
-    },
-    {
-      "id": "3573",
-      "title": "My Blog",
-      "author": "ashmita",
-      "createdate": "2024-01-31T07:24:26.981Z",
-      "content": [
-        {
-          "paragraph": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-          "id": 1
-        },
-        {
-          "paragraph": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
-          "id": 2
         }
       ]
     },
     {
-      "id": "777d",
+      "id": "d784",
       "title": "Barcelona",
       "author": "ashmita",
-      "createdate": "2024-01-31T07:56:09.500Z",
+      "createdate": "2024-02-05T08:30:22.238Z",
       "content": [
         {
           "paragraph": "In 1899 Joan Gamper, a Swiss man, decided to introduce football to Barcelona by setting up a team. The club was officially founded on 29th November 1899.",
@@ -96,56 +41,82 @@
         {
           "paragraph": "It grew from strength to strength, winning titles such as the Macaya Cup in 1902, the Pyrenees Cup in 1910 - 1912.",
           "id": 2
-        }
-      ]
-    },
-    {
-      "id": "8804",
-      "title": "xcvxcvvc",
-      "author": "ashmita123",
-      "createdate": "2024-02-01T05:39:06.357Z",
-      "content": [
-        {
-          "paragraph": "cvccvb",
-          "id": 1
         },
         {
-          "paragraph": "vcbcvvcvb",
-          "id": 2
-        }
-      ]
-    },
-    {
-      "id": "0ddb",
-      "title": "cvbvvc",
-      "author": "ashmita123",
-      "createdate": "2024-02-01T05:39:14.524Z",
-      "content": [
-        {
-          "paragraph": "vcnvvn",
-          "id": 1
-        }
-      ]
-    },
-    {
-      "id": "73dd",
-      "title": "Nepal",
-      "author": "ashmita123",
-      "createdate": "2024-02-01T06:16:45.955Z",
-      "content": [
-        {
-          "paragraph": "Nepal is famous not only for its diverse culture and rich natural heritage, but it also has diverse geographical regions, which makes it a must-visit place once in a lifetime.",
-          "id": 1
-        },
-        {
-          "paragraph": "The newly-carved out Province 1 under the federal system is one of the seven provinces in the country. It has 12 districts spread from Mount Everest, the highest mountain in the world, to one of the greenest districts in Ilam and downward to Koshi Tappu, the serene wetland known for its wildlife reserve.",
-          "id": 2
-        },
-        {
-          "paragraph": "Besides these natural wonders, this province has people from different ethnicities, making it an amalgamation of diverse culture and language. ",
+          "paragraph": "Barcelona FC built their first stadium in 1909 with a capacity of 6,000 people.",
           "id": 3
         }
       ]
+    },
+    {
+      "id": "ac42",
+      "title": "Blank Space",
+      "author": "ashmita123",
+      "createdate": "2024-02-05T11:05:57.005Z",
+      "content": [
+        {
+          "paragraph": "Nice to meet you, where you been?\nI could show you incredible things\nMagic, madness, heaven, sin\nSaw you there and I thought\n\"Oh, my God, look at that face\nYou look like my next mistake\nLove's a game, wanna play?\" Ay",
+          "id": 1
+        },
+        {
+          "paragraph": "New money, suit and tie\nI can read you like a magazine\nAin't it funny? Rumors fly\nAnd I know you heard about me\nSo hey, let's be friends\nI'm dying to see how this one ends\nGrab your passport and my hand\nI can make the bad guys good for a weekend",
+          "id": 2
+        },
+        {
+          "paragraph": "So it's gonna be forever\nOr it's gonna go down in flames\nYou can tell me when it's over, mm\nIf the high was worth the pain\nGot a long list of ex-lovers\nThey'll tell you I'm insane\n'Cause you know I love the players\nAnd you love the game",
+          "id": 3
+        },
+        {
+          "paragraph": "'Cause we're young, and we're reckless\nWe'll take this way too far\nIt'll leave you breathless, mm\nOr with a nasty scar\nGot a long list of ex-lovers\nThey'll tell you I'm insane\nBut I've got a blank space, baby\nAnd I'll write your name",
+          "id": 4
+        }
+      ]
+    },
+    {
+      "id": "f9e2",
+      "title": "Summer of 69",
+      "author": "ashmita123",
+      "createdate": "2024-02-05T11:07:34.374Z",
+      "content": [
+        {
+          "paragraph": "I got my first real six-string\nBought it at the five and dime\nPlayed it 'til my fingers bled\nWas the summer of '69",
+          "id": 1
+        },
+        {
+          "paragraph": "Me and some guys from school\nHad a band and we tried real hard\nJimmy quit and Jody got married\nI should've known we'd never get far",
+          "id": 2
+        },
+        {
+          "paragraph": "Oh, when I look back now\nThat summer seemed to last forever\nAnd if I had the choice\nYeah, I'd always wanna be there\nThose were the best days of my life",
+          "id": 3
+        },
+        {
+          "paragraph": "Ain't no use in complainin'\nWhen you got a job to do\nI spent my evenings down at the drive-in\nAnd that's when I met you, yeah!",
+          "id": 4
+        },
+        {
+          "paragraph": "Standin' on your mama's porch\nYou told me that you'd wait forever\nOh, and when you held my hand\nI knew that it was now or never\nThose were the best days of my life\nOh, yeah\nBack in the summer of '69, oh",
+          "id": 5
+        }
+      ]
+    }
+  ],
+  "setting": [
+    {
+      "headerColor": "Gray",
+      "buttonColor": "Red",
+      "usernameColor": "White",
+      "usernameFontsize": "30px",
+      "headerFont": "Cursive",
+      "id": "074b"
+    },
+    {
+      "headerColor": "Pink",
+      "buttonColor": "Blue",
+      "usernameColor": "White",
+      "usernameFontsize": "30px",
+      "headerFont": "Cursive",
+      "id": "b4fa"
     }
   ]
 }

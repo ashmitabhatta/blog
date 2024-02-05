@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { usermanagerGuard } from './usermanager.guard';
+import { usermanagerGuard } from './guard/usermanager.guard';
 const routes: Routes = [
   {
     path: '',
@@ -18,9 +18,12 @@ const routes: Routes = [
       ),
     canMatch: [usermanagerGuard],
   },
+  {
+    path: '**', redirectTo: '/blog'
+  }
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

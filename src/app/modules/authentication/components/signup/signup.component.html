@@ -3,102 +3,60 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Sign Up</mat-card-title>
+        <button  class="loginbutton" mat-button  (click)="login()" type="button">Login
+          <mat-icon>arrow_back</mat-icon>
+        </button>
         <mat-card-subtitle>Please Enter Registration details</mat-card-subtitle>
       </mat-card-header>
       <mat-card-content>
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Username</mat-label>
-            <input
-              matInput
-              placeholder="Username"
-              formControlName="username"
-              id="username"
-            />
+            <input matInput placeholder="Username" formControlName="username" id="username" />
             <!-- <mat-error *ngIf="signUpForm.get('username')?.hasError('minlength')">Username too short</mat-error> -->
-            <mat-error
-              *ngIf="signUpForm.get('username')?.hasError('usernameExists')"
-              >Username already exist</mat-error
-            >
+            <mat-error *ngIf="signUpForm.get('username')?.hasError('usernameExists')">Username already exist</mat-error>
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Email</mat-label>
-            <input
-              matInput
-              placeholder="pat@example.com"
-              formControlName="email"
-              required
-            />
+            <input matInput placeholder="pat@example.com" formControlName="email" required />
             <mat-icon matSuffix>email</mat-icon>
-            <mat-error *ngIf="signUpForm.get('email')?.hasError('invalidEmail')"
-              >Enter a valid Email address</mat-error
-            >
+            <mat-error *ngIf="signUpForm.get('email')?.hasError('invalidEmail')">Enter a valid Email address</mat-error>
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Password</mat-label>
-            <input
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              formControlName="password"
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password" />
+            <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword"
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+              <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
-            <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')"
-              >Password too short</mat-error
-            >
+            <mat-error *ngIf="signUpForm.get('password')?.hasError('minlength')">Password too short</mat-error>
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Confirm Password</mat-label>
-            <input
-              matInput
-              [type]="hidden ? 'password' : 'text'"
-              formControlName="confirmpassword"
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hidden = !hidden"
-              [attr.aria-label]="'Hide confirm password'"
-              [attr.aria-pressed]="hidden"
-            >
+            <input matInput [type]="hideConfirmPassword ? 'password' : 'text'" formControlName="confirmpassword" (paste)="onPaste($event)"/>
+            <button mat-icon-button matSuffix (click)="hideConfirmPassword = !hideConfirmPassword"
+              [attr.aria-label]="'Hide confirm password'" [attr.aria-pressed]="hideConfirmPassword" type="button">
               <mat-icon>{{
-                hidden ? "visibility_off" : "visibility"
-              }}</mat-icon>
+                hideConfirmPassword ? "visibility_off" : "visibility"
+                }}</mat-icon>
             </button>
 
             <!-- <mat-error *ngIf="signUpForm.hasError('PasswordNoMatch')">Password didnot matched</mat-error> -->
           </mat-form-field>
-          <span *ngIf="signUpForm.hasError('PasswordNoMatch')"
-            >Password didnot matched</span
-          >
+          <span *ngIf="signUpForm.hasError('PasswordNoMatch')">Password didnot matched</span>
         </div>
       </mat-card-content>
       <div class="example-container">
         <mat-card-actions>
-          <button
-            mat-raised-button
-            color="primary"
-            type="submit"
-            [disabled]="signUpForm.invalid"
-          >
-            Signup</button
-          >&nbsp; &nbsp;
-          <button mat-raised-button color="primary" (click)="login()">
-            Login
-          </button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="signUpForm.invalid">
+            Signup</button>&nbsp; &nbsp;
+         
         </mat-card-actions>
       </div>
     </mat-card>

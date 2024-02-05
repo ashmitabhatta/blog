@@ -9,38 +9,19 @@
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Enter your username</mat-label>
-            <input
-              matInput
-              name="username"
-              ngModel
-              required
-              #username="ngModel"
-            />
-            <mat-error [hidden]="username.valid">Username required</mat-error>
-            <!-- <span [hidden]="username.valid">Username required</span> -->
+            <input matInput name="username" ngModel required #username="ngModel" />
+            <mat-error *ngIf="!username.valid">Username required</mat-error>
           </mat-form-field>
         </div>
         <div class="example-container">
           <mat-form-field appearance="outline">
             <mat-label>Enter your password</mat-label>
-            <input
-              matInput
-              [type]="hide ? 'password' : 'text'"
-              name="password"
-              ngModel
-              required
-              #password="ngModel"
-            />
-            <button
-              mat-icon-button
-              matSuffix
-              (click)="hide = !hide"
-              [attr.aria-label]="'Hide password'"
-              [attr.aria-pressed]="hide"
-            >
-              <mat-icon>{{ hide ? "visibility_off" : "visibility" }}</mat-icon>
+            <input matInput [type]="hidePassword ? 'password' : 'text'" name="password" ngModel required #password="ngModel" />
+            <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'"
+              [attr.aria-pressed]="hidePassword" type="button">
+              <mat-icon>{{ hidePassword ? "visibility_off" : "visibility" }}</mat-icon>
             </button>
-            <mat-error [hidden]="password.valid">Password required</mat-error>
+            <mat-error *ngIf="!password.valid">Password required</mat-error>
           </mat-form-field>
         </div>
         <div class="example-container">
@@ -48,16 +29,9 @@
             <button mat-raised-button color="primary" type="submit">
               Login
             </button>
-            &nbsp;
-            <button
-              mat-raised-button
-              color="primary"
-              type="submit"
-              (click)="signup()"
-            >
-              Signup
-            </button>
+        
           </mat-card-actions>
+          <p><a (click)="signup()">Click here to signup</a></p>
         </div>
       </mat-card-content>
     </mat-card>

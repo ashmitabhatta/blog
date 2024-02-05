@@ -1,11 +1,13 @@
 .example-card {
+  margin-top:20px;
   width: 600px;
+  
 }
 .container {
-  align-items: center;
+  // align-items: center;
   justify-content: center;
   display: flex;
-  height: 100vh;
+  // height: 100vh;
   
 }
 mat-form-field {

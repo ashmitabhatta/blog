@@ -1,0 +1,62 @@
+<div class="settingcontainer">
+    <mat-card class="setting-card">
+        <form [formGroup]="settingForm" (ngSubmit)="changeSetting()">
+        <mat-card-header>
+            <mat-card-title>Settings</mat-card-title>
+            <button mat-flat-button type="back" (click)="back()"
+                class="backbutton"><mat-icon>arrow_back</mat-icon>Back</button>
+            <mat-card-subtitle>Choose the setting</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+                <mat-form-field class="setting" appearance="outline" >
+                    <mat-label>Header Color</mat-label>
+                    <mat-select formControlName="headerColor">
+                        <mat-option value="Gray">Gray</mat-option>
+                        <mat-option value="Pink">Pink</mat-option>
+                        <mat-option value="Red">Red</mat-option>
+                        <mat-option value="Purple">Purple</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="setting" appearance="outline">
+                    <mat-label>Logout Button Color</mat-label>
+                    <mat-select formControlName="buttonColor">
+                        <mat-option value="Red">Red</mat-option>
+                        <mat-option value="Blue">Blue</mat-option>
+                        <mat-option value="Pink">Pink</mat-option>
+                        <mat-option value="Black">Black</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="setting" appearance="outline">
+                    <mat-label>Username Color</mat-label>
+                    <mat-select formControlName="usernameColor">
+                        <mat-option value="White">White</mat-option>
+                        <mat-option value="Pink">Pink</mat-option>
+                        <mat-option value="Blue">Blue</mat-option>
+                        <mat-option value="Red">Red</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="setting" appearance="outline">
+                    <mat-label>Username Fontsize</mat-label>
+                    <mat-select formControlName="usernameFontsize">
+                        <mat-option value="22px">22px</mat-option>
+                        <mat-option value="10px">10px</mat-option>
+                        <mat-option value="30px">30px</mat-option>
+                        <mat-option value="16px">16px</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field class="setting" appearance="outline">
+                    <mat-label>Header font</mat-label>
+                    <mat-select formControlName="headerFont">
+                        <mat-option value="Times New Roman">Time New Roman</mat-option>
+                        <mat-option value="Calibri">Calibri</mat-option>
+                        <mat-option value="Cursive">Cursive</mat-option>
+                        <mat-option value="Serif">Serif</mat-option>
+                    </mat-select>
+                </mat-form-field>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-raised-button color="primary" type="submit">Save Setting</button>
+        </mat-card-actions>
+    </form>
+    </mat-card>
+</div>

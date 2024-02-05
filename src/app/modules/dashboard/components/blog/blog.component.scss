@@ -23,7 +23,7 @@ mat-card-header{
   margin-top:20px;
 }
 mat-slide-toggle{
-  // height:40px;
+
   margin:10px 0px 10px 20px;
 }
 .select{
@@ -33,12 +33,11 @@ mat-slide-toggle{
   width: 400px;
   
 }
-
-// @media  screen and  (max-width:600px){
-//   .custom-select{
-//     width:100%;
-//   }
-//   .example-card{
-//     width:100%
-//   }
-// }
+table{
+ margin-top: 40px;
+ margin-left:30px;
+}
+.mat-mdc-cell {
+  
+  width:1800px;
+}

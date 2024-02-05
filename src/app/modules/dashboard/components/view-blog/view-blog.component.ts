@@ -8,7 +8,7 @@ import { Postdetails } from '../../model/post.interface';
   styleUrls: ['./view-blog.component.scss'],
 })
 export class ViewBlogComponent {
-  constructor(private service: SignupService,private route:Router, private router: ActivatedRoute) {}
+  constructor(private service: SignupService, private route: Router, private router: ActivatedRoute) { }
   postId!: number;
   displayblog: Postdetails[] | undefined;
   ngOnInit() {
@@ -22,14 +22,14 @@ export class ViewBlogComponent {
     this.service.getPostById(postId).subscribe({
       next: (blog) => {
         this.displayblog = [blog];
-        console.log('data viewed successfully',  this.displayblog);
+        console.log('data viewed successfully', this.displayblog);
       },
       error: (error) => {
         console.log('Error in displaying data', error);
       },
     });
   }
-  back(){
+  back() {
     this.route.navigate(['/blog'])
   }
 }

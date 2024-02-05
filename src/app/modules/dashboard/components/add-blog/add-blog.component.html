@@ -1,9 +1,8 @@
-<app-header></app-header>
 <div class="container">
   <form [formGroup]="addBlogForm" (ngSubmit)="submitBlog()">
     <mat-card class="example-card">
       <mat-card-header>
-        <button mat-button  color="primary"type="submit"(click)="back()"  >Back
+        <button mat-button color="primary" type="submit" (click)="back()">Back
           <mat-icon>arrow_back</mat-icon>
         </button>
         <mat-card-title *ngIf="!isEditing">Add Blog</mat-card-title>
@@ -13,52 +12,38 @@
       <mat-card-content>
         <mat-form-field appearance="outline">
           <mat-label>Title</mat-label>
-          <input
-            matInput
-            placeholder="Enter the title"
-            formControlName="title"
-          />
+          <input matInput placeholder="Enter the title" formControlName="title" />
         </mat-form-field>
         <div formArrayName="content">
           <div *ngFor="let paragraph of contentArray.controls; let i = index" [formGroupName]="i">
             <form [formGroup]="paragraph | arrayconvert">
-            <mat-form-field appearance="outline">
-              <mat-label>Paragraph {{ i + 1 }}</mat-label>
-              <button
-            type="button"
-            mat-raised-button
-            color="warn" class="removebutton"
-            (click)="removeParagraph(i)"
-          >
-          <mat-icon>remove</mat-icon>
-          </button>
-              <textarea matInput formControlName="paragraph"></textarea>
-              <br>
-            </mat-form-field>
+              <mat-form-field appearance="outline">
+                <mat-label>Paragraph {{ i + 1 }}</mat-label>
+                <button type="button" mat-raised-button color="warn" class="removebutton" (click)="removeParagraph(i)">
+                  <mat-icon>remove</mat-icon>
+                </button>
+                <textarea matInput formControlName="paragraph"></textarea>
+                <br>
+              </mat-form-field>
             </form>
-            
+
 
             &nbsp;
           </div>
         </div>
       </mat-card-content>
       <mat-card-actions>
-        <button
-        type="button"
-        mat-raised-button
-        class="addparagraph"
-        color="primary"
-        (click)="addParagraph()"
-      >Add Paragraph
-       <mat-icon>add</mat-icon>
-      </button>&nbsp;&nbsp;
+        <button type="button" mat-raised-button class="addparagraph" color="primary" (click)="addParagraph()">Add
+          Paragraph
+          <mat-icon>add</mat-icon>
+        </button>&nbsp;&nbsp;
         <button class="addupdatebutton" mat-raised-button color="primary" type="submit" *ngIf="isEditing">
           Update Blog
         </button>&nbsp;&nbsp;
-        <button mat-raised-button class="addupdatebutton"color="primary" type="submit" *ngIf="!isEditing">
+        <button mat-raised-button class="addupdatebutton" color="primary" type="submit" *ngIf="!isEditing">
           Add Blog
         </button>&nbsp;&nbsp;
-        
+
       </mat-card-actions>
     </mat-card>
   </form>
