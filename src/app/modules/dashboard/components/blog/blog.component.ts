@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { SignupService } from 'src/app/modules/authentication/service/signup.service';
 import { Postdetails } from '../../model/post.interface';
 import { MatTableDataSource } from '@angular/material/table';
+import { DashboardService } from '../../service/dashboard.service';
 @Component({
   selector: 'app-blog',
   templateUrl: './blog.component.html',
@@ -19,29 +20,30 @@ export class BlogComponent implements OnInit {
   dataSource = new MatTableDataSource<Postdetails[]>([]);
   checkAuthor: string | undefined | null;
   user = localStorage.getItem('loggedInUser');
-  constructor(private service: SignupService,
-    private route: Router) { }
+  constructor(private signupService: SignupService,
+    private route: Router,
+    private dashboardService:DashboardService) { }
   ngOnInit(): void {
     this.getBlog();
     
   }
   getBlog() {
     if (this.selectedBlog === 'personal') {
-      this.service.getLoggedInUser().subscribe((username) => {
+      this.signupService.getLoggedInUser().subscribe((username) => {
         if (username) {
-          this.service.getPosts(username).subscribe((posts) => {
+          this.dashboardService.getPosts(username).subscribe((posts) => {
             this.postDetail = posts;
           });
         }
       });
     } else {
-      this.service.getAllPosts().subscribe((posts) => {
+      this.dashboardService.getAllPosts().subscribe((posts) => {
         this.postDetail = posts;
       });
     }
   }
   editBlog(postId: number) {
-    this.service.getPostById(postId).subscribe((post) => {
+    this.dashboardService.getPostById(postId).subscribe((post) => {
       this.checkAuthor = post.author;
       if (this.checkAuthor === this.user) {
         this.route.navigate(['blog/edit-blog', postId]);
@@ -49,10 +51,10 @@ export class BlogComponent implements OnInit {
     });
   }
   deleteBlog(postId: number): void {
-    this.service.getPostById(postId).subscribe((post) => {
+    this.dashboardService.getPostById(postId).subscribe((post) => {
       this.checkAuthor = post.author;
       if (this.checkAuthor === this.user) {
-        this.service.deletePost(postId).subscribe(() => {
+        this.dashboardService.deletePost(postId).subscribe(() => {
           alert('Post deleted successfully');
           this.getBlog();
         });

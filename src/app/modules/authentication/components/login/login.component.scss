@@ -1,16 +1,20 @@
 .example-container mat-form-field {
   margin-left: 8px;
-  ;
+  
 }
 .example-card {
   width: 600px;
+ 
 }
+
 .container {
   align-items: center;
   justify-content: center;
   display: flex;
   height: 100vh;
-  
+  // background-image: url('./../../../../../assets/images/background.jpg');
+  // background-repeat: no-repeat;
+  // background-size: cover;
 }
 mat-card-title {
   font-size: 25px;

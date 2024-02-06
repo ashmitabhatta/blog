@@ -1,9 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { SignupService } from 'src/app/modules/authentication/service/signup.service';
 import { Setting } from '../../model/post.interface';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-
+import { DashboardService } from '../../service/dashboard.service';
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
@@ -15,7 +14,7 @@ export class SettingComponent {
   settingvalue:Setting|undefined;
   loggedInUserId=localStorage.getItem('userId');
   settingForm:FormGroup=new FormGroup({})
-  constructor(private route: Router,private service:SignupService,private fb:FormBuilder) { }
+  constructor(private route: Router,private fb:FormBuilder,private dashboardService:DashboardService) { }
   ngOnInit(){
     this.settingForms();
     this.getSetting();
@@ -38,30 +37,26 @@ export class SettingComponent {
   changeSetting() {
     this.setting=this.settingForm.value;
     if(this.loggedInUserId){
-      this.service.updateSetting(this.loggedInUserId,this.settingForm.value).subscribe({
+      this.dashboardService.updateSetting(this.loggedInUserId,this.settingForm.value).subscribe({
         next:(settingvalue)=>{
          alert("Setting changed successfully");
-         console.log(settingvalue);
-         this.service.settingUpdate(this.setting as Setting);
-         this.route.navigate(['/blog'])
+         this.dashboardService.settingUpdate(this.setting as Setting);
         },
         error:(error)=>{
-          console.log("Error occured",error);
+          alert("Error occured");
         }
       })
     }
   }
   getSetting() {
     if (this.loggedInUserId) {
-      this.service.getSetting(this.loggedInUserId).subscribe({
+      this.dashboardService.getSetting(this.loggedInUserId).subscribe({
         next: (settingData) => {
           this.setting = settingData;
           this.patchSettingForm();
-          console.log('Setting Data:', this.setting);
-         
         },
-        error: (error) => {
-          console.log("Error occurred", error);
+        error: () => {
+          alert("Error occured");
         }
       });
       

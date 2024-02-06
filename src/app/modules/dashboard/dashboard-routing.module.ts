@@ -7,7 +7,6 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { EditBlogComponent } from './components/edit-blog/edit-blog.component';
 import { ViewBlogComponent } from './components/view-blog/view-blog.component';
 import { SettingComponent } from './components/setting/setting.component';
-
 const routes: Routes = [
   {
     path: '', component: DashboardComponent,
@@ -20,7 +19,6 @@ const routes: Routes = [
     ]
   }
 ];
-
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

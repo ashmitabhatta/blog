@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SignupService } from '../../service/signup.service';
 import { confirmPasswordValidator, customemailValidation, } from '../../validations/customValidation';
+import { DashboardService } from 'src/app/modules/dashboard/service/dashboard.service';
 @Component({
   selector: 'app-signup',
   templateUrl: './signup.component.html',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private router: Router,
-    private service: SignupService
+    private signupService: SignupService,
+    private dashboardService:DashboardService
   ) { }
   ngOnInit() {
     this.signup();
@@ -49,10 +51,11 @@ export class SignupComponent implements OnInit {
     if (this.signUpForm.valid) {
       
         const username = this.signUpForm.get('username')?.value;
-        this.service.checkDuplicateUsername(username).subscribe((data) => {
+        this.signupService.checkDuplicateUsername(username).subscribe((data) => {
           if (!data) {
             this.usernameExists = false;
-            this.service.addUsers(signUpForm.value).subscribe((response) => {
+            this.signupService.addUsers(signUpForm.value).subscribe((response) => {
+              console.log(response);
               alert('User Added sucessfully');
               const userId = response.id;
               const settingPayload={
@@ -63,8 +66,7 @@ export class SignupComponent implements OnInit {
                 usernameFontsize: '22px',
                 headerFont: 'Calibri',
               };
-              this.service.addSetting(settingPayload).subscribe(() => {
-                
+              this.dashboardService.addSetting(settingPayload).subscribe(() => {
               });
               this.router.navigate(['']);
             });

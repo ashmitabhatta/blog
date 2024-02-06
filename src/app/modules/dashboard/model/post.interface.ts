@@ -1,3 +1,5 @@
+
+
 export interface Postdetails {
     id: number;
     title: string;

@@ -2,9 +2,9 @@ import { Component, Input } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
-import { SignupService } from 'src/app/modules/authentication/service/signup.service';
 import { Content, Postdetails } from '../../model/post.interface';
 import { SnackbarComponent } from '../../snackbar/snackbar.component';
+import { DashboardService } from '../../service/dashboard.service';
 @Component({
   selector: 'app-add-blog',
   templateUrl: './add-blog.component.html',
@@ -20,9 +20,9 @@ export class AddBlogComponent {
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   constructor(
     private fb: FormBuilder,
-    private service: SignupService,
     private route: Router,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private dashboardService:DashboardService
   ) { }
   ngOnInit() {
     this.addBlog();
@@ -71,7 +71,7 @@ export class AddBlogComponent {
           ...this.addBlogForm.value,
           content: this.getContent(this.addBlogForm.value.content)
         }
-        this.service.addBlog(payload).subscribe({
+        this.dashboardService.addBlog(payload).subscribe({
           next: () => {
             this._snackBar.openFromComponent(SnackbarComponent, {
               duration: this.durationInSeconds * 1000,
@@ -97,12 +97,14 @@ export class AddBlogComponent {
           ...this.addBlogForm.value,
           content: this.getContent(this.addBlogForm.value.content)
         };
-        this.service.updateBlog(this.postId, payload).subscribe({
+        this.dashboardService.updateBlog(this.postId, payload).subscribe({
           next: () => {
             this._snackBar.openFromComponent(SnackbarComponent, {
+            
               duration: this.durationInSeconds * 1000,
               verticalPosition: this.verticalPosition,
               horizontalPosition: this.horizontalPosition,
+              panelClass: ['success-snack-bar']
             })
             this.route.navigate(['/blog'])
           },

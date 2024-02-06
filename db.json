@@ -13,20 +13,27 @@
       "password": "ashmita123",
       "confirmpassword": "ashmita123",
       "email": "ashmita123@gmail.com"
+    },
+    {
+      "id": "4487",
+      "username": "user1234",
+      "password": "asd",
+      "confirmpassword": "asd",
+      "email": "user@gmail.com"
     }
   ],
   "post": [
     {
-      "id": "c4af",
-      "title": "U.S.-Nepal Relations",
+      "title": "U.S.-Nepal Relation",
       "author": "ashmita",
-      "createdate": "2024-02-04T12:20:32.382Z",
+      "createdate": "2024-02-06T04:19:02.984Z",
       "content": [
         {
           "paragraph": "The United States recognized Nepal in 1947, and the two countries established diplomatic relations in 1948. Bilateral relations are friendly, and U.S. policy objectives center on helping Nepal build a peaceful, prosperous, resilient, and democratic society. Primary U.S. objectives in Nepal include: strengthening good governance, democratic values, and security and stability; supporting inclusive, equitable economic growth and a clean, resilient",
           "id": 1
         }
-      ]
+      ],
+      "id": "c4af"
     },
     {
       "id": "d784",
@@ -99,12 +106,40 @@
           "id": 5
         }
       ]
+    },
+    {
+      "title": "ssdgdsg",
+      "author": "user1234",
+      "createdate": "2024-02-06T05:22:45.172Z",
+      "content": [
+        {
+          "paragraph": "dffdhdf",
+          "id": 1
+        },
+        {
+          "paragraph": "12345678909",
+          "id": 2
+        }
+      ],
+      "id": "e9f1"
+    },
+    {
+      "title": "fdgf",
+      "author": "user1234",
+      "createdate": "2024-02-06T05:58:17.841Z",
+      "content": [
+        {
+          "paragraph": "fghghvccbbbcvdsfdsdfgdfffgdfffsdft",
+          "id": 1
+        }
+      ],
+      "id": "c25a"
     }
   ],
   "setting": [
     {
       "headerColor": "Gray",
-      "buttonColor": "Red",
+      "buttonColor": "Black",
       "usernameColor": "White",
       "usernameFontsize": "30px",
       "headerFont": "Cursive",
@@ -117,6 +152,14 @@
       "usernameFontsize": "30px",
       "headerFont": "Cursive",
       "id": "b4fa"
+    },
+    {
+      "headerColor": "Pink",
+      "buttonColor": "Blue",
+      "usernameColor": "White",
+      "usernameFontsize": "22px",
+      "headerFont": "Calibri",
+      "id": "4487"
     }
   ]
 }

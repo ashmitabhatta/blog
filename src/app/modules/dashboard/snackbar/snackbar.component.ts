@@ -8,5 +8,4 @@ import { MatSnackBarHorizontalPosition, MatSnackBarRef } from '@angular/material
 export class SnackbarComponent {
   snackBarRef = inject(MatSnackBarRef);
   horizontalPosition: MatSnackBarHorizontalPosition = 'start';
-  
 } 
